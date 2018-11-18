@@ -31,6 +31,7 @@ def apply_coupons(cart, coupons)
     end
     cart
 end
+
  def apply_clearance(cart)
   # code here
    cart.each do |grocery, details|
@@ -46,6 +47,7 @@ end
   end
   cart
 end
+
  def checkout(cart, coupons)
   # code here
    register = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
