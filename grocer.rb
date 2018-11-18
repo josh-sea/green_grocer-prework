@@ -4,14 +4,14 @@ def consolidate_cart(array)
   array.each do |i|
     i.each do |item, info|
       if new_hash.has_key?(item)
-        consolidated_cart[key][:count] += 1
-      else !consolidated_cart.has_key?(key)
-        consolidated_cart[key] = value
-        consolidated_cart[key][:count] = 1
+        new_hash[item][:count] += 1
+      else
+        new_hash[item] = info
+        new_hash[item][:count] = 1
       end
     end
   end
-  consolidated_cart
+  new_hash
 end
 
 
