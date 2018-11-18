@@ -17,7 +17,7 @@ def consolidate_cart(array)
 end
 
 
-def apply_coupons(array, coupon_array)
+def apply_coupons(cart_hash, coupon_array)
   # code here
   coupon_array.each do |coupon|
       item = coupon[:item]
