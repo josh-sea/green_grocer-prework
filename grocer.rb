@@ -30,7 +30,7 @@ def apply_coupons(cart_hash, coupon_array)
 # ]
       binding.pry
       
-      if cart_hash[item] && cart_hash[item][:count]  >= coupon[:num]
+      if cart_hash[item] && cart_hash[item][:count]  >= i[:num]
           if cart_hash[item + " W/COUPON"]
             cart_hash[item + " W/COUPON"][:count] += 1
           else
