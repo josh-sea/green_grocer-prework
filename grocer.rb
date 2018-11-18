@@ -18,13 +18,13 @@ end
 
 def apply_coupons(cart_hash, coupon_array)
  new_hash = {}
-  coupon.each do |element|
-      element.each do |coupon_key, coupon_values|
+  coupon_array.each do |i|
+      i.each do |ckeys, cvalues|
         consolidated_hash.each do |food_name, food_hash|
-          if coupon_values == food_name && element[:num] <= consolidated_hash[food_name][:count]
+          if coupon_values == food_name && i[:num] <= consolidated_hash[food_name][:count]
             name_with_discount = food_name + " W/COUPON"
             coupon_hash[name_with_discount] = {:price =>element[:cost], :clearance => consolidated_hash[food_name][:clearance], :count => (consolidated_hash[food_name][:count]/ element[:num]) }
-            consolidated_hash[food_name][:count] =  (consolidated_hash[food_name][:count] % element[:num])
+            consolidated_hash[food_name][:count] =  (consolidated_hash[food_name][:count] % i[:num])
             end
          end
        end
