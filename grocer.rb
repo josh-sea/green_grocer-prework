@@ -1,8 +1,10 @@
+require 'pry'
 def consolidate_cart(array)
   # code here
   new_hash = {}
   array.each do |i|
     i.each do |item, info|
+ #     binding.pry
       if new_hash.has_key?(item)
         new_hash[item][:count] += 1
       else
@@ -15,22 +17,22 @@ def consolidate_cart(array)
 end
 
 
-# def apply_coupons(cart, coupons)
-#   # code here
-#   coupons.each do |coupon|
-#       item = coupon[:item]
-#       if cart[item] && cart[item][:count]  >= coupon[:num]
-#           if cart[item + " W/COUPON"]
-#             cart[item + " W/COUPON"][:count] += 1
-#           else
-#             cart[item + " W/COUPON"] = {:price => coupon[:cost], :count => 1}
-#             cart[item + " W/COUPON"][:clearance] = cart[item][:clearance]
-#           end
-#           cart[item][:count] -= coupon[:num]
-#       end
-#     end
-#     cart
-# end
+def apply_coupons(array, coupons)
+  # code here
+  coupons.each do |coupon|
+      item = coupon[:item]
+      if cart[item] && cart[item][:count]  >= coupon[:num]
+          if cart[item + " W/COUPON"]
+            cart[item + " W/COUPON"][:count] += 1
+          else
+            cart[item + " W/COUPON"] = {:price => coupon[:cost], :count => 1}
+            cart[item + " W/COUPON"][:clearance] = cart[item][:clearance]
+          end
+          cart[item][:count] -= coupon[:num]
+      end
+    end
+    cart
+end
 
 # def apply_clearance(cart)
 #   # code here
