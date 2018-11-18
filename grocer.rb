@@ -18,7 +18,7 @@ end
 
 def apply_coupons(cart_hash, coupon_array)
   new_hash = {}
-  coupon_array.each do |i|
+  for i in 0...coupon_array.each do |i|
     i.each do |ckeys, cvalues|
       cart_hash.each do |item, item_info|
         if cvalues == item && i[:num] <= cart_hash[item][:count]
