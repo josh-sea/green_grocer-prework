@@ -43,7 +43,7 @@ def apply_clearance(cart_hash)
   # code here
   cart_hash.each do |item, item_info|
     item_info.each do |ckeys, cvalues|
-      if cart_hash[item][key] == true
+      if cart_hash[item][ckeys] == true
         new_value = cart[item][:price] * 0.8
         rounded_value = new_value.round(2)
         cart[item][:price] = rounded_value
