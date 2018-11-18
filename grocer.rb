@@ -3,7 +3,7 @@ def consolidate_cart(array)
   new_hash = {}
   array.each do |i|
     i.each do |item, info|
-      if new_hash.has_key?(key)
+      if i.keys == item
         consolidated_cart[key][:count] += 1
       else !consolidated_cart.has_key?(key)
         consolidated_cart[key] = value
