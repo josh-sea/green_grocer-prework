@@ -17,11 +17,11 @@ def consolidate_cart(array)
 end
 
 
-def apply_coupons(cart_hash, coupon_hash)
+def apply_coupons(cart_hash, coupon_array)
   # code here
-  coupon_hash.each do |keys, values|
+  coupon_array.each do |coupons|
     binding.pry
-      item = coupon[:item]
+      item = coupons[:item]
       if cart_hash[item] && cart_hash[item][:count]  >= coupon[:num]
           if cart_hash[item + " W/COUPON"]
             cart_hash[item + " W/COUPON"][:count] += 1
