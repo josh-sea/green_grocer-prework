@@ -17,8 +17,7 @@ def consolidate_cart(array)
 end
 
 def apply_coupons(cart_hash, coupon_array)
- new_hash_hash = {}
- #binding.pry
+ new_hash = {}
   coupon.each do |element|
       element.each do |coupon_key, coupon_values|
         consolidated_hash.each do |food_name, food_hash|
