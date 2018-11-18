@@ -22,17 +22,17 @@ def apply_coupons(cart_hash, coupon_hash)
   coupon_hash.each do |coupon|
     binding.pry
       item = coupon[:item]
-      if cart[item] && cart[item][:count]  >= coupon[:num]
-          if cart[item + " W/COUPON"]
-            cart[item + " W/COUPON"][:count] += 1
+      if cart_hash[item] && cart_hash[item][:count]  >= coupon[:num]
+          if cart_hash[item + " W/COUPON"]
+            cart_hash[item + " W/COUPON"][:count] += 1
           else
-            cart[item + " W/COUPON"] = {:price => coupon[:cost], :count => 1}
-            cart[item + " W/COUPON"][:clearance] = cart[item][:clearance]
+            cart_hash[item + " W/COUPON"] = {:price => coupon[:cost], :count => 1}
+            cart_hash[item + " W/COUPON"][:clearance] = cart_hash[item][:clearance]
           end
-          cart[item][:count] -= coupon[:num]
+          cart_hash[item][:count] -= coupon[:num]
       end
     end
-    cart
+    cart_hash
 end
 
 # def apply_clearance(cart)
