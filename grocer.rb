@@ -58,10 +58,8 @@ end
 def checkout(cart, coupons)
   # code here
   pay = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
-  # cart = cart
-  # cart = cart
   total = 0
-  register.each do |grocery, details|
+  pay.each do |grocery, details|
       total += details[:price] * details[:count]
   end
   if total > 100
