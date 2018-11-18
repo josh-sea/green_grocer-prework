@@ -36,23 +36,24 @@ def apply_coupons(cart_hash, coupon_array)
       end
      end
    end
-  cart_hash.merge(new_hash)
+  cart_hash.merge!(new_hash)
 end
 
-def apply_clearance(cart_hash)
-  # code here
-  cart_hash.each do |item, item_info|
-    item_info.each do |ckeys, cvalues|
-      if cart_hash[item][ckeys] == true
-        price = (cart_hash[item][:price] - cart_hash[item][:price] * 0.2).round(2)
-        cart[item][:price] = price
-      else
-        next
-      end
-    end
-  end
-  cart
-end
+# def apply_clearance(cart)
+#   # code here
+#   cart.each do |grocery, details|
+#     details.each do |key, value|
+#       if cart[grocery][key] == true
+#         new_value = cart[grocery][:price] * 0.8
+#         rounded_value = new_value.round(2)
+#         cart[grocery][:price] = rounded_value
+#       else
+#         next
+#       end
+#     end
+#   end
+#   cart
+# end
 
 # def checkout(cart, coupons)
 #   # code here
