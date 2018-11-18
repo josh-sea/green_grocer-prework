@@ -30,7 +30,7 @@ def apply_coupons(cart_hash, coupon_array)
             :clearance => cart_hash[item][:clearance],
             :count => (cart_hash[item][:count]-i[:num])
           }
-          binding.pry
+#          binding.pry
           cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
         end
       end
