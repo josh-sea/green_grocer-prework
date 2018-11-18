@@ -55,9 +55,9 @@ def apply_clearance(cart_hash)
   cart_hash
 end
 
-def checkout(cart, coupons)
+def checkout(cart_hash, coupon_array)
   # code here
-  pay = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  pay = apply_clearance(apply_coupons(consolidate_cart(cart_hash), coupon_array))
   total = 0
   pay.each do |item, item_info|
     total += item_info[:price] * item_info[:count]
