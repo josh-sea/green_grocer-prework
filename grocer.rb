@@ -60,7 +60,7 @@ def checkout(cart, coupons)
   pay = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   total = 0
   pay.each do |item, item_info|
-    total += details[:price] * details[:count]
+    total += item_info[:price] * item_info[:count]
   end
   if total > 100
     total *= 0.9
