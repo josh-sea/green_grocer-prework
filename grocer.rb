@@ -19,9 +19,9 @@ end
 
 def apply_coupons(cart_hash, coupon_array)
   # code here
-  coupon_array.each do |coupons|
+  coupon_array.each do |i|
 #    binding.pry
-      item = coupons[:item]
+      item = i[:item]
 
 #   [
 #   {:item => "AVOCADO", :num => 2, :cost => 5.00},
