@@ -23,8 +23,8 @@ def apply_coupons(cart_hash, coupon_array)
         cart_hash.each do |item, item_info|
           if cvalues == item && i[:num] <= consolidated_hash[item][:count]
             name_with_discount = item + " W/COUPON"
-            coupon_hash[name_with_discount] = {:price =>element[:cost], :clearance => consolidated_hash[food_name][:clearance], :count => (consolidated_hash[food_name][:count]/ element[:num]) }
-            consolidated_hash[food_name][:count] =  (consolidated_hash[food_name][:count] % i[:num])
+            coupon_hash[name_with_discount] = {:price =>element[:cost], :clearance => consolidated_hash[item][:clearance], :count => (consolidated_hash[item][:count]/ element[:num]) }
+            cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
             end
          end
        end
