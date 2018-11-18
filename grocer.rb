@@ -26,6 +26,7 @@ def apply_coupons(cart_hash, coupon_array)
           new_hash[name_with_discount] = {:price =>element[:cost], :clearance => cart_hash[item][:clearance], :count => (cart_hash[item][:count]/ element[:num]) }
           cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
         end
+      end
      end
    end
  end
