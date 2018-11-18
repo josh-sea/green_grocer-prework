@@ -17,14 +17,14 @@ def consolidate_cart(array)
 end
 
 def apply_coupons(cart_hash, coupon_array)
- new_hash = {}
+  new_hash = {}
   coupon_array.each do |i|
-      i.each do |ckeys, cvalues|
-        cart_hash.each do |item, item_info|
-          if cvalues == item && i[:num] <= cart_hash[item][:count]
-            name_with_discount = item + " W/COUPON"
-            new_hash[name_with_discount] = {:price =>element[:cost], :clearance => cart_hash[item][:clearance], :count => (cart_hash[item][:count]/ element[:num]) }
-            cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
+    i.each do |ckeys, cvalues|
+      cart_hash.each do |item, item_info|
+        if cvalues == item && i[:num] <= cart_hash[item][:count]
+          name_with_discount = item + " W/COUPON"
+          new_hash[name_with_discount] = {:price =>element[:cost], :clearance => cart_hash[item][:clearance], :count => (cart_hash[item][:count]/ element[:num]) }
+          cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
             end
          end
        end
