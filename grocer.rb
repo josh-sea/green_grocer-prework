@@ -1,6 +1,6 @@
 def consolidate_cart(array)
   # code here
-  consolidated_cart = {}
+  new_hash = {}
    array.each do |el|
     el.each do |key, value|
       if consolidated_cart.has_key?(key)
