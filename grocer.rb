@@ -38,32 +38,6 @@ def apply_coupons(cart_hash, coupon_array)
    end
   cart_hash.merge(new_hash)
 end
-  
-# def apply_coupons(cart_hash, coupon_array)
-#   # code here
-#   coupon_array.each do |i|
-# #    binding.pry
-#       item = i[:item]
-
-# #   [
-# #   {:item => "AVOCADO", :num => 2, :cost => 5.00},
-# #   {:item => "BEER", :num => 2, :cost => 20.00},
-# #   {:item => "CHEESE", :num => 3, :cost => 15.00}
-# # ]
-#       binding.pry
-      
-#       if cart_hash[item] && cart_hash[item][:count]  >= i[:num]
-#           if cart_hash[item + " W/COUPON"]
-#             cart_hash[item + " W/COUPON"][:count] += 1
-#           else
-#             cart_hash[item + " W/COUPON"] = {:price => coupon[:cost], :count => 1}
-#             cart_hash[item + " W/COUPON"][:clearance] = cart_hash[item][:clearance]
-#           end
-#           cart_hash[item][:count] -= coupon[:num]
-#       end
-#     end
-#     cart_hash
-# end
 
 # def apply_clearance(cart)
 #   # code here
