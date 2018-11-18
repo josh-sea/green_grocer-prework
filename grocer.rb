@@ -17,9 +17,9 @@ def consolidate_cart(array)
 end
 
 
-def apply_coupons(array, coupons)
+def apply_coupons(array, coupon_array)
   # code here
-  coupons.each do |coupon|
+  coupon_array.each do |coupon|
       item = coupon[:item]
       if cart[item] && cart[item][:count]  >= coupon[:num]
           if cart[item + " W/COUPON"]
