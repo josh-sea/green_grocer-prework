@@ -22,13 +22,15 @@ def apply_coupons(cart_hash, coupon_array)
     i.each do |ckeys, cvalues|
       cart_hash.each do |item, item_info|
         if cvalues == item && i[:num] <= cart_hash[item][:count]
-          binding.pry
+ #         binding.pry
           discount = "#{item} W/COUPON"
+#         binding.pry 
           new_hash[discount] = {
             :price =>i[:cost],
             :clearance => cart_hash[item][:clearance],
             :count => (cart_hash[item][:count]-i[:num])
           }
+          binding.pry
           cart_hash[item][:count] =  (cart_hash[item][:count] % i[:num])
         end
       end
