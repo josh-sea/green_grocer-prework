@@ -39,9 +39,9 @@ def apply_coupons(cart_hash, coupon_array)
   cart_hash.merge(new_hash)
 end
 
-def apply_clearance(cart)
+def apply_clearance(array)
   # code here
-  cart.each do |grocery, details|
+  .each do |grocery, details|
     details.each do |key, value|
       if cart[grocery][key] == true
         new_value = cart[grocery][:price] * 0.8
