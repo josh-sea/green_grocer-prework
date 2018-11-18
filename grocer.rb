@@ -57,7 +57,7 @@ end
 
 def checkout(cart, coupons)
   # code here
-  register = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  pay = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   # cart = cart
   # cart = cart
   total = 0
