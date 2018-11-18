@@ -45,7 +45,7 @@ def apply_clearance(cart_hash)
     item_info.each do |ckeys, cvalues|
       if cart_hash[item][ckeys] == true
         price = (cart_hash[item][:price] - cart_hash[item][:price] * 0.2).round(2)
-        car_hash[item][:price] = price
+        cart_hash[item][:price] = price
       else
         next
       end
