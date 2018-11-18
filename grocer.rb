@@ -22,7 +22,7 @@ def apply_coupons(cart_hash, coupon_array)
   coupon_array.each do |coupons|
 #    binding.pry
       item = coupons[:item]
-      binding,pry
+      binding.pry
       if cart_hash[item] && cart_hash[item][:count]  >= coupon[:num]
           if cart_hash[item + " W/COUPON"]
             cart_hash[item + " W/COUPON"][:count] += 1
