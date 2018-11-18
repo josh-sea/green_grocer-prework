@@ -29,7 +29,7 @@ def apply_coupons(cart_hash, coupon_array)
          end
        end
  end
-  consolidated_hash.merge!(coupon_hash)
+  cart_hash.merge!(new_hash)
   
 # def apply_coupons(cart_hash, coupon_array)
 #   # code here
