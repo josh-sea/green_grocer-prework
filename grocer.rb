@@ -55,17 +55,17 @@ def apply_clearance(cart_hash)
   cart_hash
 end
 
-# def checkout(cart, coupons)
-#   # code here
-#   register = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
-#   # cart = cart
-#   # cart = cart
-#   total = 0
-#   register.each do |grocery, details|
-#       total += details[:price] * details[:count]
-#   end
-#   if total > 100
-#     total *= 0.9
-#   end
-#   total.round(2)
-# end
+def checkout(cart, coupons)
+  # code here
+  register = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  # cart = cart
+  # cart = cart
+  total = 0
+  register.each do |grocery, details|
+      total += details[:price] * details[:count]
+  end
+  if total > 100
+    total *= 0.9
+  end
+  total.round(2)
+end
