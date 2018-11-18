@@ -1,8 +1,8 @@
 def consolidate_cart(array)
   # code here
   new_hash = {}
-   array.each do |el|
-    el.each do |key, value|
+   array.each do |i|
+    i.each do |key, value|
       if consolidated_cart.has_key?(key)
         consolidated_cart[key][:count] += 1
       else !consolidated_cart.has_key?(key)
