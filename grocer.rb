@@ -36,7 +36,7 @@ def apply_coupons(cart_hash, coupon_array)
       end
      end
    end
-  cart_hash.merge!(new_hash)
+  cart_hash.merge(new_hash)
 end
   
 # def apply_coupons(cart_hash, coupon_array)
